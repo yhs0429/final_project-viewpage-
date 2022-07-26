@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>챗봇2</title>
+<style>
+    .Backgroundstyle{
+    position: fixed;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: url(https://cdn.channel.io/plugin/images/standalone-pattern-bg.png) 0% 0% / 460px 864px repeat;
+}
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+#ch-chatbot {
+    font-family: inherit;
+}
+.chattool{
+    position: relative;
+    width: 370px;
+    height: 680px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: rgb(0 0 0 / 30%) 0px 12px 60px 5px;
+    transform: translate(0px, 0px);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+.chatdetail{
+    position: relative;
+    height: 100%;
+    overflow-y: scroll;
+}
+.chat_head{
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    min-height: 60px;
+    padding-right: 14px;
+    padding-bottom: 1px;
+    padding-left: 22px;
+    overflow: hidden;
+}
+.content{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.85);
+    opacity: 0.01;
+    animation-name: ehLtDs;
+    animation-duration: 800ms;
+    animation-timing-function: cubic-bezier(0.3, 0, 0, 1);
+    animation-fill-mode: forwards;
+}
+.chat_head_content.con{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    overflow: hidden;
+}
+.chat_head_content_con.con2{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+button {
+    box-sizing: border-box;
+    overflow: visible;
+    padding: 0;
+    background: transparent;
+    border: 0 solid transparent;
+    text-shadow: 0 0 0 transparent;
+    box-shadow: 0 0 0 transparent;
+    font-family: "NotoSansKR", "NotoSansJP", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue", "맑은 고딕", "Yu Gothic", "Segoe UI", "Roboto", "system-ui", "sans-serif";
+}
+.back{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    min-width: 42px;
+    padding: 10px 0px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+.chat_head.Text{
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    margin: 0px;
+    font-style: normal;
+    font-weight: 600;
+    color: inherit;
+    transition: color 150ms cubic-bezier(0.3, 0, 0, 1) 0ms;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+    <div id="ch-chatbot">
+        <div class="Backgroundstyle">
+            <div class="chattool">
+                <div class="chatdetail">
+                    <div class="chat_head">
+                        <button class="back" onclick="location.href='file:/C:/aistudy/final_project/views_html/%EC%B1%97%EB%B4%87/%EC%B1%97%EB%B4%87%EA%BE%B8%EB%AF%B8%EC%9E%90.html'">
+                            <svg width="20" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg" foundation="[object Object]" class="cancel" defaultopacity="1" hoveredopacity="1" magintop="0" marginright="0" maginbottom="0" marginleft="0" withtheme="true">
+                                <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M9.17255 16.4226C8.84711 16.748 8.31947 16.748 7.99404 16.4226L2.1607 10.5893C1.83527 10.2638 1.83527 9.73619 2.1607 9.41075L7.99404 3.57742C8.31947 3.25198 8.84711 3.25198 9.17255 3.57742C9.49799 3.90285 9.49799 4.43049 9.17255 4.75593L3.92847 10L9.17255 15.2441C9.49799 15.5695 9.49799 16.0972 9.17255 16.4226Z"></path>
+                            </svg>
+                        </button>
+                        <div class="content">
+                            <div class="chat_head_content con">
+                                <span class="chat_head Text">
+                                <div class="head_Text">Day Mood</div>
+                                </span>
+
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

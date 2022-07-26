@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>챗봇</title>
+<style>
+.Backgroundstyle{
+    position: fixed;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: url(https://cdn.channel.io/plugin/images/standalone-pattern-bg.png) 0% 0% / 460px 864px repeat;
+}
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+#ch-chatbot *{
+    font-family: inherit;
+}
+.chattool{
+    position: relative;
+    width: 370px;
+    height: 680px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: rgb(0 0 0 / 30%) 0px 12px 60px 5px;
+    transform: translate(0px, 0px);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+.chatdetail{
+    position: relative;
+    height: 100%;
+    overflow-y: scroll;
+}
+.chat_head{
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    min-height: 60px;
+    padding-right: 14px;
+    padding-bottom: 1px;
+    padding-left: 22px;
+    overflow: hidden;
+}
+.content{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.85);
+}
+.chat_head_content.con{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.85);
+}
+.chat_head_content_con.con2{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+.chat_img{
+    position: relative !important;
+    width: 30px !important;
+    height: 30px !important;
+    overflow: hidden !important;
+    background-color: rgb(255, 255, 255) !important;
+    border-radius: 15.12px !important;
+    box-shadow: none;
+}
+.chat_head.Text{
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    margin: 0px;
+    font-style: normal;
+    font-weight: 600;
+    color: inherit;
+    transition: color 150ms cubic-bezier(0.3, 0, 0, 1) 0ms;
+    overflow: hidden;
+}
+.head_right{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+.text{
+    margin: 0px 22px 16px;
+    color: rgba(0, 0, 0, 0.4);
+    letter-spacing: -0.1px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: pre-line !important;
+}
+.front{
+    position: relative;
+    padding: 0px 14px 20px;
+}
+.cc.Content-ch-front.front{
+    padding: 6px 0px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    border-radius: 18px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 2px 16px 1px;
+}
+.Content-ch-front.maintool{
+    display: flex;
+    margin: 0px 6px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.2s ease 0s;
+}
+.Content-ch-front.imgtexttool{
+    display: flex;
+    margin: 50px 10px;
+    cursor: pointer;
+    border-radius: 15px;
+
+}
+.Content-ch-front.imges{
+    padding: 38px 0px 0px 6px;
+    margin-right: 8px;
+}
+.Content-ch-front.texttool{
+    flex: 1 1 0px;
+    -webkit-box-flex: 1;
+    min-width: 180px;
+    padding: 8px 0px 12px;
+    letter-spacing: -0.1px;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 1.5rem !important;
+    line-height: 2.1rem !important;
+}
+.Content-ch-front.nickname{
+    overflow: hidden;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: -0.1px;
+    font-size: 1.3rem !important;
+    line-height: 1.82rem !important;
+}
+.Content-ch-front.text1{
+    letter-spacing: -0.1px;
+    padding-right: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 1.5rem !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: pre-line !important;
+}
+.munyihagitool{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 6px 14px;
+}
+.munyihagibutton{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px;
+    letter-spacing: -0.1px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 17px;
+    box-shadow: none;
+    opacity: 1;
+    transition: box-shadow 0.2s ease-out 0s;
+    font-size: 1.5rem !important;
+    line-height: 2.1rem !important;
+}
+.send-munyi::before{
+    display: block;
+    width: 20px;
+    height: 20px;
+    content: "";
+    background-image: url(https://cf.channel.io/asset/plugin/images/send-filled-black.svg);
+    background-size: cover;
+    opacity: 1;
+}
+.back{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    min-width: 42px;
+    padding: 10px 0px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+button {
+    box-sizing: border-box;
+    overflow: visible;
+    padding: 0;
+    background: transparent;
+    border: 0 solid transparent;
+    text-shadow: 0 0 0 transparent;
+    box-shadow: 0 0 0 transparent;
+    font-family: "NotoSansKR", "NotoSansJP", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue", "맑은 고딕", "Yu Gothic", "Segoe UI", "Roboto", "system-ui", "sans-serif";
+}
+.logotool{
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-top: 24px;
+}
+.logo{
+    position: relative !important;
+    width: 96px !important;
+    height: 96px !important;
+    overflow: hidden !important;
+    background-color: rgb(255, 255, 255) !important;
+    border-radius: 40.32px !important;
+    box-shadow: none !important;
+}
+</style>
+</head>
+<body>
+    <div id="ch-chatbot">
+      <div class="Backgroundstyle">
+        <div class="chattool">
+         <div class="chatdetail">
+         <div class="chat_head">
+            <div class="content">
+                <div class="chat_head_content con">
+                    <div class="chat_head_content_con con2">
+                    <div class="chat_img" size="30">
+                        <img width="30" height="30" src="https://user-images.githubusercontent.com/103401972/177932117-fc9fb522-e196-4b38-940f-f8411d63704a.png">
+                    </div>
+                    <span class="chat_head Text">
+                        <div class="head_Text">Day Mood</div>
+                    </span>
+                </div>
+                </div>
+                <div class="head_right">
+                    <button class="back">
+                        <svg width="20" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg" foundation="[object Object]" class="cancel" defaultopacity="1" hoveredopacity="1" magintop="0" marginright="0" maginbottom="0" marginleft="0" withtheme="true">
+                            <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M9.17255 16.4226C8.84711 16.748 8.31947 16.748 7.99404 16.4226L2.1607 10.5893C1.83527 10.2638 1.83527 9.73619 2.1607 9.41075L7.99404 3.57742C8.31947 3.25198 8.84711 3.25198 9.17255 3.57742C9.49799 3.90285 9.49799 4.43049 9.17255 4.75593L3.92847 10L9.17255 15.2441C9.49799 15.5695 9.49799 16.0972 9.17255 16.4226Z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+         </div>
+         <div class="logotool">
+            <div size="96" class="logo">
+                <img width="96" height="96" src="https://user-images.githubusercontent.com/103401972/177932117-fc9fb522-e196-4b38-940f-f8411d63704a.png">
+            </div>
+          </div>
+          <div class="cc Content-ch-front front">
+            <div class="Content-ch-front maintool">
+                    <div class="Content-ch-front imgtexttool">
+                        <div class="Content-ch-front imges" size="36">
+                            <img width="36" height="36" src="https://user-images.githubusercontent.com/103401972/177932117-fc9fb522-e196-4b38-940f-f8411d63704a.png">
+                        </div>
+                        <div class="Content-ch-front texttool">
+                            <div class="Content-ch-front nickname"> 
+                                <div class="Content-ch-front text1">
+                                    안녕하세용 ~ DayMood 입니당~
+                                    이청우
+                                    우청이
+                                    청우이
+                                    이청우
+                                    이승찬
+                                    찬승이
+                                    승찬이
+                                    최욱진
+                                    최진욱
+                                    욱진최
+                                    오인웅
+                                    오이눙
+                                    오웅인
+                                    인웅오
+                                    유효선
+                                    선효유
+                                    효유선
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="munyihagitool">
+                <button type="button" class="munyihagibutton" onclick="location.href='/C:/aistudy/final_project/views_html/%EC%B1%97%EB%B4%87/%EC%B1%97%EB%B4%87%EA%BE%B8%EB%AF%B8%EC%9E%902.html'">
+                    <div name="send-munyi" width="20" height="20" size="20" class="send-munyi">
+                        문의하기
+                    </div>
+                </button>
+            </div>
+          </div>
+         </div>
+        </div>
+     </div>
+    </div>
+</body>
+</html>
